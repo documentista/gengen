@@ -26,7 +26,7 @@
 
 (defn gen-emails
   [sample-size]
-  (gen/sample (gen'/string-from-regex #"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$")))
+  (gen/sample (gen'/string-from-regex #"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}")))
 
 (defn gen-postal-codes
   [sample-size]
