@@ -30,5 +30,5 @@
 
 (defn gen-postal-codes
   [sample-size]
-  (gen/sample (gen'/string-from-regex #"[0-9]{5}")))
+  (gen/sample (gen'/string-from-regex #"[0-9]{5}(-[0-9]{4})?") sample-size))
 
