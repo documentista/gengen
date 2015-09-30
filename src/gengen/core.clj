@@ -20,15 +20,18 @@
   [size]
   (gen/sample int-vector size))
 
-(defn chuck-sample
-  []
-  (gen/sample (gen'/string-from-regex #"([☃-♥]{3}|B(A|OO)M)*")))
-
 (defn gen-emails
-  [sample-size]
-  (gen/sample (gen'/string-from-regex #"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}")))
+    [sample-size]
+    (gen/sample (gen'/string-from-regex #"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.(com|org|biz)")))
 
 (defn gen-postal-codes
   [sample-size]
   (gen/sample (gen'/string-from-regex #"[0-9]{5}(-[0-9]{4})?") sample-size))
 
+(defn gen-name
+    [sample-size]
+    (gen/sample (gen'/string-from-regex #"[A-Z]{1}[a-z]{1,25}") sample-size))
+
+(defn gen-phone-number
+    [sample-size]
+    (gen/sample (gen'/string-from-regex #"[1-9]{3}-[1-9]{3}-[1-9]{4}")))
